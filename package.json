@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-twitter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/beatrizf13/nodejs-twitter.git",
+  "author": "beatrizf13 <azz.felix7@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  }
+}
