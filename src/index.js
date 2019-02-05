@@ -12,6 +12,9 @@ app.get("/", (req, res) => {
   return res.send({ title: "nodejs-twitter" });
 });
 
+app.use(express.json());
+app.use(require("./routes"));
+
 app.listen(3000, () => {
   console.log("server on port 3000");
 });
