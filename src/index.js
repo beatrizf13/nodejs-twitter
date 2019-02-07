@@ -1,20 +1,17 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 
-const server = require("http").Server(app);
-const io = require("socket.io")(server);
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
-mongoose.connect(
-  "mongodb://beatrizf13:beatrizf13@ds221405.mlab.com:21405/nodejs-twitter",
-  { useNewUrlParser: true }
-);
-
-app.get("/", (req, res) => {
-  return res.send({ title: "nodejs-twitter" });
+mongoose.connect('mongodb://beatrizf13:beatrizf13@ds221405.mlab.com:21405/nodejs-twitter', {
+  useNewUrlParser: true,
 });
+
+app.get('/', (req, res) => res.send({ title: 'nodejs-twitter' }));
 
 app.use((req, res, next) => {
   req.io = io;
@@ -23,8 +20,8 @@ app.use((req, res, next) => {
 
 app.use(cors());
 app.use(express.json());
-app.use(require("./routes"));
+app.use(require('./routes'));
 
 server.listen(3000, () => {
-  console.log("server on port 3000");
+  console.log('server on port 3000');
 });

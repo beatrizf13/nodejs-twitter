@@ -1,4 +1,4 @@
-const Tweet = require("../models/TweetModel");
+const Tweet = require('../models/TweetModel');
 
 module.exports = {
   async store(req, res) {
@@ -8,8 +8,8 @@ module.exports = {
 
     await tweet.save();
 
-    req.io.emit("like", tweet);
+    req.io.emit('like', tweet);
 
     return res.json(tweet);
-  }
+  },
 };
